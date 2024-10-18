@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "alan",
+      "email": "alan.jones@gmail.com",
+      "company": {
+        "name": "Right Solutions",
+        "email": "info@rightsolutions.com"
+      }
+    },
+    {
+      "id": 2,
+      "name": "dinesh",
+      "email": "dinesh@gmail.com",
+      "company": {
+        "name": "Right Solutions",
+        "email": "info@rightsolutions.com"
+      }
+    },
+    {
+      "id": 3,
+      "name": "manoram",
+      "email": "manoram@gmail.com",
+      "company": {
+        "name": "Right Solutions",
+        "email": "info@rightsolutions.com"
+      }
+    }
+  ]
+}
