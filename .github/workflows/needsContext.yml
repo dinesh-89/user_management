@@ -1,0 +1,18 @@
+name: Needs Context
+run-name: Needs Context
+
+on: push
+
+jobs:
+ needs-context:
+  runs-on: ubuntu-latest
+  steps:
+   - run: |
+       echo "Failing the job with exit 1"
+       exit 1
+
+ dependency-job:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "Running the dependency job"
+ 
