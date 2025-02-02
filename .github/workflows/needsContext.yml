@@ -12,6 +12,7 @@ jobs:
        exit 1
 
  dependency-job:
+  needs: needs-context
   runs-on: ubuntu-latest
   steps:
    - run: echo "Running the dependency job"
