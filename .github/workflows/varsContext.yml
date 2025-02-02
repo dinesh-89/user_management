@@ -1,0 +1,12 @@
+name: VARS Context
+run-name: VARS Context
+
+on: push
+
+jobs: 
+ vars-context:
+  runs-on: ubuntu-latest
+
+  steps:
+   - name: Echo Vars context
+     run: echo "VARS Sample ${{vars.SAMPLE_VAR}}"
