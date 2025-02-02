@@ -1,0 +1,16 @@
+name: ENV Context
+run-name: ENV Context
+
+on: [push, workflow_dispatch]
+
+jobs:
+ run-env-context:
+  runs-on: ubuntu-latest
+  env:
+   SAMPLE_ENV: "This is a sample Env"
+  steps:
+   - name: Checkout Repository
+     uses: actions/checkout@v2
+
+   - name: Echo Context env
+     run: echo "Env Sample ${{env.SAMPLE_ENV}}"
