@@ -1,0 +1,22 @@
+name: Action Filters
+run-name: Action Filters
+
+on:
+ push:
+  branches:
+   - master
+   - development
+   - '!feature/*'
+
+  paths:
+   - 'server/**'
+   - '!client/**'
+ pull_request:
+  types: [opened, merged]
+
+jobs:
+ run-action-filters:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Action Filters Steps started executing...
+     run: echo date
