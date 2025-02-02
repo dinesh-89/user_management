@@ -1,0 +1,21 @@
+name: Matrix Practice
+run-name: Matrix Practice
+
+on: push
+
+jobs:
+ matrix-practice:
+  runs-on: ubuntu-latest
+  strategy:
+   matrix:
+    node: [20, 21]
+    os: [ubuntu-latest, windows-latest]
+    include: 
+     - node: 19
+       os: ubuntu-latest
+    exclude:
+     - node: 20
+       os: windows-latest
+
+  steps:
+   - run: echo date
