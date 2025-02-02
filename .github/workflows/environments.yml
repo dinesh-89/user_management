@@ -1,0 +1,19 @@
+name: Environment Selection Workflow
+run-name: Environment Selection Workflow
+
+on:
+ workflow_dispatch:
+  inputs:
+   TARGET:
+    type: environment
+    required: true
+
+jobs:
+ environment-selection:
+  runs-on: ubuntu-latest
+  environment: ${{inputs.TARGET}}
+  steps:
+   - run: |
+       echo "Selected environment ${{inputs.TARGER}}"
+       echo "Selected config ${{vars.CONFIG}}"
+  
