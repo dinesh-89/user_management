@@ -1,0 +1,21 @@
+name: Inputs
+run-name: Inputs
+
+on: 
+ workflow_dispatch:
+  inputs:
+   environment:
+    description: "Deployment environment"
+    required: true
+    default: "development"
+    type: choice
+    options:
+     - development
+     - production
+
+jobs:
+ inputs-workflow:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "Selected input value ${{github.event.inputs.environment}}"
+  
