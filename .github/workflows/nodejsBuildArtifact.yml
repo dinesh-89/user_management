@@ -1,0 +1,29 @@
+name: Nodejs Build Artifact
+run-name: Nodejs Build Artifact
+
+on: workflow_dispatch
+
+jobs:
+ nodejs-build:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout
+     uses: actions/checkout@v4.2.2
+
+   - name: Setup Node.js environment
+     uses: actions/setup-node@v4.2.0
+     with:
+      node-version: "23"
+
+   - name: INstall dependencies
+     run: npm install
+
+   - name: Build project
+     run: npm run build
+
+   - name: Upload Artifact
+     uses: actions/upload-artifact@v4.6.0
+     with:
+      name: Nodejs-Package
+      path: dist/
+     
