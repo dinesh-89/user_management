@@ -1,7 +1,11 @@
 name: Nodejs Build Artifact
 run-name: Nodejs Build Artifact
 
-on: workflow_dispatch
+on:
+ push:
+  paths:
+   - 'server/**'
+   - '!client/**'
 
 jobs:
  nodejs-build:
@@ -15,15 +19,19 @@ jobs:
      with:
       node-version: "23"
 
-   - name: INstall dependencies
-     run: npm install
+   - name: Install dependencies
+     run: |
+        cd server
+        npm install
 
    - name: Build project
-     run: npm run build
+     run: |
+        cd server
+        npm run build
 
    - name: Upload Artifact
      uses: actions/upload-artifact@v4.6.0
      with:
       name: Nodejs-Package
-      path: dist/
+      path: server/dist/
      
